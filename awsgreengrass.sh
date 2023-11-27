@@ -1,12 +1,12 @@
 #!/usr/bin bash
 
 #aws iot describe-endpoint
-export DEPLOYMENT_BUCKET=mangdang2023
+export DEPLOYMENT_BUCKET="Enter Bucket name here"
 
 
 export DANCE_FILE=demo.py
 export IOT_ENDPOINT=`aws iot describe-endpoint | grep amazon | cut -d: -f 2 | sed 's/\"//g'` 
-export YOUR_PRIVATE_ECR_IMAGE=`aws ecr describe-repositories | grep repositoryUri | grep ros-humble-greengrass-minipupper | cut -d: -f 2 | sed 's/\"//g' | sed 's/\,//g'` | tr -d ' '
+export YOUR_PRIVATE_ECR_IMAGE=`aws ecr describe-repositories | grep repositoryUri | grep ros-foxy-greengrass-minipupper | cut -d: -f 2 | sed 's/\"//g' | sed 's/\,//g'` | tr -d ' '
 #cd ~/environment/mini-pupper-aws
 export ECR_IMAGE=${YOUR_PRIVATE_ECR_IMAGE}":latest"
 echo $ECR_IMAGE
