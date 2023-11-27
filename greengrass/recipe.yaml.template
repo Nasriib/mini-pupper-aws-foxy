@@ -33,7 +33,7 @@ Manifests:
         Install:
           Script: |
             echo "Installing the dance application! This will run everytime the Greengrass core software is started."
-            docker tag YOUR_PRIVATE_ECR_IMAGE ros-humble-greengrass-minipupper:latest
+            docker tag YOUR_PRIVATE_ECR_IMAGE ros-foxy-greengrass-minipupper:latest
         Run:
           Script: |
             echo "Running the dance application! This is the main application execution script."
